@@ -1,0 +1,52 @@
+X = load('X.mat');
+XX1=struct2cell(X);
+XX=XX1{1,1};
+
+%           k = 10; % cluster in 10 groups
+%           k_center=zeros(k,1);
+%           means=mean(XX);
+%           n = size(XX, 1);
+%           Xdist=zeros(n,1);         
+%           output=zeros(n,1);
+%           
+%          for i=1:n
+%            %Xdist(i)=dot(XX(i,:)-means,XX(i,:)-means);
+%            Xdist(i)=norm(XX(i,:)-means,2);
+%          end
+%          [value,index]=sort(Xdist,'descend');
+%          k_center=XX(index(1:k),:);  
+%          
+%          
+%          q=0;
+%          O=zeros(n,1);
+%        %  OO=[];
+%          while 1
+%              for i=1:n
+%                  %X_K_dist=dot(XX(i,:),k_center(1,:));
+%                  X_K_dist=norm(XX(i,:)-k_center(1,:),1);
+%                  label=1;
+%                  for j=2:k
+%                    %d=dot(XX(i,:),k_center(j,:));
+%                    d=norm(XX(i,:)-k_center(j,:),1);
+%                    if( X_K_dist>d )
+%                        X_K_dist=d;
+%                        label=j;                       
+%                    end
+%                  end
+%                  output(i,1)=label;             
+%                 
+%              end
+%              % OO=[OO output];
+%              if(norm(O-output)==0) 
+%                 break;  
+%              end
+%              O=output;          
+%              for i=1:k
+%                  k_center(i)=mean(XX(output==i));
+%              end
+%              
+%              q=q+1;             
+%          end
+  my=model.cluster.Cluster.cluster(XX1{1,1});
+% length(my)
+% kmeans(XX,10);
